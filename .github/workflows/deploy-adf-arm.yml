@@ -22,8 +22,8 @@ jobs:
       with:
         subscriptionId: ${{ secrets.SUB }}
         resourceGroupName: kjaprod
-        template: ./ARMTemplateForFactory.json
-        parameters: ./kjaprodParametersForFactory.json
+        template: ./adf-kjdemo/ARMTemplateForFactory.json
+        parameters: ./adf-kjdemo/kjaprodParametersForFactory.json
 
       # output containerName variable from template
     - run: echo ${{ steps.deploy.outputs.containerName }}
