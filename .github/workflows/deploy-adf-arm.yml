@@ -13,11 +13,11 @@ jobs:
 
       # Log into Azure
     - uses: azure/login@v1
-      env: '[{ "clientId": ${{ secrets.CLIENTID }}, 
+      env: '{ "clientId": ${{ secrets.CLIENTID }}, 
                 "clientSecret": ${{ secrets.CLIENTSECRET }}, 
                 "subscriptionId": ${{ secrets.SUB }},  
                 "tenantId": ${{ secrets.TENANTID }}  
-            }]'
+            }'
       with:
         creds: ${{ env.CREDENTIALS }}
 
