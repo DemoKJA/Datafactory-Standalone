@@ -14,7 +14,7 @@ jobs:
       # Log into Azure
     - uses: azure/login@v1
       with:
-        creds: '[{ "clientId": ${{ secrets.CLIENTID }}, "clientSecret": ${{ secrets.CLIENSECRET }}, "subscriptionId": ${{ secrets.SUB }}, "tenantId": ${{ secrets.TENANTID }}  }]'
+        creds: '{ "clientId": ${{ secrets.CLIENTID }}, "clientSecret": ${{ secrets.CLIENSECRET }}, "subscriptionId": ${{ secrets.SUB }}, "tenantId": ${{ secrets.TENANTID }}  }'
 
       # Deploy ARM template
     - name: Run ARM deploy
