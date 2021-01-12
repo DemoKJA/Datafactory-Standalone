@@ -11,9 +11,10 @@ jobs:
     steps:
     - name: just echo a message
       run: |
-        echo These so and so pipelines will be removed from production
+        echo ***These so and so pipelines will be removed from production***
 
   build-and-deploy:
+    needs: check-changes-made
     environment: main # Ensure people are notified of the changes in email to review
     runs-on: ubuntu-latest
     steps:
