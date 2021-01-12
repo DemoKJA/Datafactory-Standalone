@@ -13,7 +13,7 @@ jobs:
       run: |
         echo ***These so and so pipelines will be removed from production***
 
-  build-and-deploy:
+  check-prev-step-to-review-changes:
     needs: review-changes-to-be-made
     environment: main # Ensure people are notified of the changes in email to review
     runs-on: ubuntu-latest
