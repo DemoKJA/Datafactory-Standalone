@@ -1,9 +1,11 @@
 name: Deploy ADf ARM
 
-environment: main
 
 on:
   workflow_dispatch:
+
+environment: 
+  name: main
 
 jobs:
   build-and-deploy:
