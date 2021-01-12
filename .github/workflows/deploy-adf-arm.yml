@@ -1,12 +1,11 @@
 name: Deploy ADf ARM
 
+environment: main
+
 on:
   workflow_dispatch:
 
 jobs:
-
-  environment: main
-  
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
