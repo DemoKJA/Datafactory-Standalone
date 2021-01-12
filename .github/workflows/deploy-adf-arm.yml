@@ -6,10 +6,10 @@ on:
 
 
 jobs:
-  check-changes-made:
+  review-changes-to-be-made:
     runs-on: ubuntu-latest
     steps:
-    - name: just echo a message
+    - name: Review this step for changes made to production
       run: |
         echo ***These so and so pipelines will be removed from production***
 
