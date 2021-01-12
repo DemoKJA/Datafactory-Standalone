@@ -6,7 +6,6 @@ on:
 
 jobs:
   build-and-deploy:
-    environment: main
     runs-on: ubuntu-latest
     steps:
 
@@ -26,6 +25,8 @@ jobs:
         resourceGroupName: kjaprod
         template: ./adf-kjdemo/ARMTemplateForFactory.json
         parameters: ./adf-kjdemo/kjaprodParametersForFactory.json
+    
+    environment: main
 
       # output containerName variable from template
     - run: echo ${{ steps.deploy.outputs.containerName }}
