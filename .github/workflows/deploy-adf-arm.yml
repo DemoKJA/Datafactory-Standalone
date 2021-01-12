@@ -4,9 +4,17 @@ name: Deploy ADf ARM
 on:
   workflow_dispatch:
 
+
 jobs:
+  check-changes-made:
+    runs-on: ubuntu-latest
+    steps:
+    - name: just echo a message
+      run: |
+        echo These so and so pipelines will be removed from production
+
   build-and-deploy:
-    environment: main
+    environment: main # Ensure people are notified of the changes in email to review
     runs-on: ubuntu-latest
     steps:
 
