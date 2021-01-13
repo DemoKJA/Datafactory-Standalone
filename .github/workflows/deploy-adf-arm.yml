@@ -17,7 +17,7 @@ jobs:
     needs: review-changes-to-be-made
     environment: 
       name: main # Ensure people are notified of the changes in email to review
-      url: ${{ steps.Review this step for changes made to production.outputs }}
+      url: ${{ steps.[Review this step for changes made to production].outputs }}
     runs-on: ubuntu-latest
     steps:
       # Checkout code
