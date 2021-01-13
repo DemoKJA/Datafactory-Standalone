@@ -12,6 +12,7 @@ jobs:
     - name: Review this step for changes made to production
       run: |
         echo ***These so and so pipelines will be removed from production***
+    environment: main # Ensure people are notified of the changes in email to review
 
   check-prev-step-to-review-changes:
     needs: review-changes-to-be-made
