@@ -8,6 +8,8 @@ on:
 jobs:
   review-changes-to-be-made:
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.Review-this-step-for-changes-made.outputs }}
     steps:
     - name: Review-this-step-for-changes-made
       run: |
@@ -17,7 +19,7 @@ jobs:
     needs: review-changes-to-be-made
     environment: 
       name: main # Ensure people are notified of the changes in email to review
-      url: ${{ steps.Review-this-step-for-changes-made.outputs }}
+      url: ${{ needs.review-changes-to-be-made.outputs.output1 }}
     runs-on: ubuntu-latest
     steps:
       # Checkout code
