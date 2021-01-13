@@ -9,7 +9,7 @@ jobs:
   review-changes-to-be-made:
     runs-on: ubuntu-latest
     steps:
-    - name: Review this step for changes made to production
+    - name: Review-this-step-for-changes-made
       run: |
         echo ***These so and so pipelines will be removed from production***
 
@@ -17,7 +17,7 @@ jobs:
     needs: review-changes-to-be-made
     environment: 
       name: main # Ensure people are notified of the changes in email to review
-      url: ${{ steps.Review this step for changes made to production.outputs }}
+      url: ${{ steps.Review-this-step-for-changes-made.outputs }}
     runs-on: ubuntu-latest
     steps:
       # Checkout code
