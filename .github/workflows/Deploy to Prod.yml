@@ -1,4 +1,4 @@
-name: Deploy to Stage
+name: Deploy to Prod
 
 on:
   workflow_dispatch:
@@ -20,9 +20,9 @@ jobs:
       uses: azure/arm-deploy@v1
       with:
         subscriptionId: ${{ secrets.SUB }}
-        resourceGroupName: kjastage
+        resourceGroupName: kjaprod
         template: ./adf-kjadev/ARMTemplateForFactory.json
-        parameters: ./adf-kjadev/StageARMParameters.json
+        parameters: ./adf-kjadev/ProdARMParameters.json
 
       # output containerName variable from template
     - run: echo ${{ steps.deploy.outputs.containerName }}
