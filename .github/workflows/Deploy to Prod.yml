@@ -2,6 +2,9 @@ name: Deploy to Prod
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - adf_publish_prod
 
 jobs:
   Dev to Stage:
