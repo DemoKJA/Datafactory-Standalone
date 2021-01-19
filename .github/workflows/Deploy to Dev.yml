@@ -20,7 +20,7 @@ jobs:
       uses: azure/arm-deploy@v1
       with:
         subscriptionId: ${{ secrets.SUB }}
-        resourceGroupName: kjastage
+        resourceGroupName: kjadev
         template: ./adf-kjadev/ARMTemplateForFactory.json
         parameters: ./adf-kjadev/DevARMParameters.json
 
