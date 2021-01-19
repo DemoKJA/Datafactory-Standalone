@@ -1,4 +1,4 @@
-name: Deploy Dev to Stage
+name: Deploy to Deve
 
 on:
   workflow_dispatch:
@@ -22,7 +22,7 @@ jobs:
         subscriptionId: ${{ secrets.SUB }}
         resourceGroupName: kjastage
         template: ./adf-kjadev/ARMTemplateForFactory.json
-        parameters: ./adf-kjadev/StageARMParameters.json
+        parameters: ./adf-kjadev/DevARMParameters.json
 
       # output containerName variable from template
     - run: echo ${{ steps.deploy.outputs.containerName }}
