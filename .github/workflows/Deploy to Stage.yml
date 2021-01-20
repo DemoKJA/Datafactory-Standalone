@@ -1,0 +1,30 @@
+name: Deploy to Stage
+
+on:
+  push:
+    branches: adf_publish_stage
+  workflow_dispatch:
+
+jobs:
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout code
+    - uses: actions/checkout@adf_publish_stage
+
+      # Log into Azure
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZCREDENTIALS }}
+
+      # Deploy ARM template
+    - name: Run ARM deploy
+      uses: azure/arm-deploy@v1
+      with:
+        subscriptionId: ${{ secrets.SUB }}
+        resourceGroupName: kjaprod
+        template: ./adf-kjadev/ARMTemplateForFactory.json
+        parameters: ./adf-kjadev/StageARMParameters.json
+
+      # output containerName variable from template
+    - run: echo ${{ steps.deploy.outputs.containerName }}
