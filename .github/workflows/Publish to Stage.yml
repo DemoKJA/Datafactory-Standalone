@@ -1,8 +1,8 @@
 name: Deploy to Stage
 
 on:
-  pull_request:
-    branches: [ adf_publish_stage ]
+  push:
+    branches: adf_publish_stage
   workflow_dispatch:
 
 jobs:

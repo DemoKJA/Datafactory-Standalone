@@ -2,8 +2,8 @@ name: Deploy to Prod
 
 on:
   push:
-    branches: [ adf_publish_prod ]
-    workflow_dispatch:
+    branches: adf_publish_prod
+  workflow_dispatch:
 
 jobs:
   Deploy:
