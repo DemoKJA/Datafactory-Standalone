@@ -10,7 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checkout code
-    - uses: actions/checkout@adf_publish_stage
+    - uses: actions/checkout@v2
+      with:
+        ref: adf_publish_prod
+  
+    - name: ls
+      run: ls ./adf-kjadev/
 
       # Log into Azure
     - uses: azure/login@v1
@@ -22,7 +27,7 @@ jobs:
       uses: azure/arm-deploy@v1
       with:
         subscriptionId: ${{ secrets.SUB }}
-        resourceGroupName: kjaprod
+        resourceGroupName: kjastage
         template: ./adf-kjadev/ARMTemplateForFactory.json
         parameters: ./adf-kjadev/StageARMParameters.json
 

@@ -10,7 +10,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checkout code
-    - uses: actions/checkout@adf_publish_prod
+    - uses: actions/checkout@v2
+      with:
+        ref: adf_publish_prod
+  
+    - name: ls
+      run: ls ./adf-kjadev/
 
       # Log into Azure
     - uses: azure/login@v1
