@@ -1,5 +1,5 @@
 {
-	"name": "Test pipeline Migrate 5",
+	"name": "Test pipeline Migrate",
 	"properties": {
 		"activities": [
 			{
